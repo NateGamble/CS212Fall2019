@@ -1,0 +1,16 @@
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csprojAssemblyReference.cache
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj.CoreCompileInputs.cache
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahPlayer.dll
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahPlayer.pdb
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahLib.dll
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj.CopyComplete
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.dll
+H:\cs212\Project05\prog5\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.pdb
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahPlayer.dll
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahPlayer.pdb
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahLib.dll
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csprojAssemblyReference.cache
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj.CoreCompileInputs.cache
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj.CopyComplete
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.dll
+H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.pdb

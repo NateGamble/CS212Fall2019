@@ -1,0 +1,15 @@
+H:\cs212\Project02\Project02\obj\Debug\Project02.csprojAssemblyReference.cache
+H:\cs212\Project02\Project02\obj\Debug\MainWindow.g.cs
+H:\cs212\Project02\Project02\obj\Debug\App.g.cs
+H:\cs212\Project02\Project02\obj\Debug\Project02_MarkupCompile.cache
+H:\cs212\Project02\Project02\obj\Debug\Project02_MarkupCompile.lref
+H:\cs212\Project02\Project02\bin\Debug\Project02.exe.config
+H:\cs212\Project02\Project02\bin\Debug\Project02.exe
+H:\cs212\Project02\Project02\bin\Debug\Project02.pdb
+H:\cs212\Project02\Project02\obj\Debug\MainWindow.baml
+H:\cs212\Project02\Project02\obj\Debug\Project02.g.resources
+H:\cs212\Project02\Project02\obj\Debug\Project02.Properties.Resources.resources
+H:\cs212\Project02\Project02\obj\Debug\Project02.csproj.GenerateResource.cache
+H:\cs212\Project02\Project02\obj\Debug\Project02.csproj.CoreCompileInputs.cache
+H:\cs212\Project02\Project02\obj\Debug\Project02.exe
+H:\cs212\Project02\Project02\obj\Debug\Project02.pdb
