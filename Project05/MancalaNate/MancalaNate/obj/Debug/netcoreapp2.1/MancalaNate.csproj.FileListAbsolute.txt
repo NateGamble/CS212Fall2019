@@ -9,3 +9,14 @@ H:\cs212\Project05\MancalaNate\MancalaNate\bin\Debug\netcoreapp2.1\MancalaNate.d
 H:\cs212\Project05\MancalaNate\MancalaNate\bin\Debug\netcoreapp2.1\MancalaNate.pdb
 H:\cs212\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.dll
 H:\cs212\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.pdb
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\bin\Debug\netcoreapp2.1\MancalaNate.deps.json
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\bin\Debug\netcoreapp2.1\MancalaNate.runtimeconfig.json
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\bin\Debug\netcoreapp2.1\MancalaNate.runtimeconfig.dev.json
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\bin\Debug\netcoreapp2.1\MancalaNate.dll
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\bin\Debug\netcoreapp2.1\MancalaNate.pdb
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.csprojAssemblyReference.cache
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.csproj.CoreCompileInputs.cache
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.AssemblyInfoInputs.cache
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.AssemblyInfo.cs
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.dll
+H:\CS212Fall2019\Project05\MancalaNate\MancalaNate\obj\Debug\netcoreapp2.1\MancalaNate.pdb

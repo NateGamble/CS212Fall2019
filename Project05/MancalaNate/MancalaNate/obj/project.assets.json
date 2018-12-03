@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\cs212\\Project05\\MancalaNate\\MancalaNate\\MancalaNate.csproj",
+      "projectUniqueName": "H:\\CS212Fall2019\\Project05\\MancalaNate\\MancalaNate\\MancalaNate.csproj",
       "projectName": "MancalaNate",
-      "projectPath": "H:\\cs212\\Project05\\MancalaNate\\MancalaNate\\MancalaNate.csproj",
+      "projectPath": "H:\\CS212Fall2019\\Project05\\MancalaNate\\MancalaNate\\MancalaNate.csproj",
       "packagesPath": "C:\\Users\\neg6\\.nuget\\packages\\",
-      "outputPath": "H:\\cs212\\Project05\\MancalaNate\\MancalaNate\\obj\\",
+      "outputPath": "H:\\CS212Fall2019\\Project05\\MancalaNate\\MancalaNate\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
