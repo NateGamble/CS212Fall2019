@@ -14,3 +14,11 @@ H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj
 H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj.CopyComplete
 H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.dll
 H:\cs212\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.pdb
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahPlayer.dll
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahPlayer.pdb
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\bin\Debug\MankalahLib.dll
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csprojAssemblyReference.cache
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj.CoreCompileInputs.cache
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.csproj.CopyComplete
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.dll
+H:\CS212Fall2019\Project05\MankalahPlayer\MankalahPlayer\obj\Debug\MankalahPlayer.pdb

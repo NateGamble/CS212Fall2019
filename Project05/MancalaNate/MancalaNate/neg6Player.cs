@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace Mankalah
 {
 
-    public class skeletronPrime : Player
+    public class neg6Player : Player
     {
         private Position us;
         private int timeLimit;
         int maxDepth;
 
-        public skeletronPrime(Position pos, int timeLimit) : base(pos, "skeletronPrime", timeLimit)
+        public neg6Player(Position pos, int timeLimit) : base(pos, "NateGamble", timeLimit)
         {
             this.timeLimit = timeLimit;
             us = pos;
@@ -22,7 +22,7 @@ namespace Mankalah
 
         public override string gloat()
         {
-            return "I win, of course. You're lucky to survive an encounter with me!";
+            return "I win! How lucky!";
         }
 
         public override int chooseMove(Board b)
@@ -31,7 +31,7 @@ namespace Mankalah
             sw.Start();
 
             int depth = 1;
-            int[] moveToTake = { 0, int.MinValue};
+            int[] moveToTake = { 0, int.MinValue };
 
             maxDepth = 50;
 
@@ -42,9 +42,9 @@ namespace Mankalah
                     moveToTake = result;
                 Console.WriteLine($"Depth{depth}: best move is {moveToTake[0]} with score {moveToTake[1]}");
                 depth++;
-            } while (sw.ElapsedMilliseconds<(timeLimit - 100) && depth <= maxDepth);
+            } while (sw.ElapsedMilliseconds < (timeLimit - 100) && depth <= maxDepth);
 
-                Console.WriteLine($"Elapsed Time: {sw.ElapsedMilliseconds}, time allowed: {timeLimit}");
+            Console.WriteLine($"Elapsed Time: {sw.ElapsedMilliseconds}, time allowed: {timeLimit}");
 
             return moveToTake[0];
 
@@ -146,20 +146,20 @@ namespace Mankalah
             if (us == Position.Top)
             {
                 h2 = b.scoreTop();
-                //h3 = b.scoreBot();
+                h3 = b.scoreBot();
                 h1 = h2 - b.scoreBot();
-                //h4 = b.stonesAt(11) + b.stonesAt(12);
-                //h5 = b.stonesAt(7) + b.stonesAt(8);
+                h4 = b.stonesAt(11) + b.stonesAt(12);
+                h5 = b.stonesAt(7) + b.stonesAt(8);
             }
             else
             {
                 h2 = b.scoreBot();
-                //h3 = b.scoreTop();
+                h3 = b.scoreTop();
                 h1 = h2 - b.scoreTop();
-                //h4 = b.stonesAt(4) + b.stonesAt(5);
-                //h5 = b.stonesAt(0) + b.stonesAt(1);
+                h4 = b.stonesAt(4) + b.stonesAt(5);
+                h5 = b.stonesAt(0) + b.stonesAt(1);
             }
-            sum = h1 + h2;  // - h3 - h4 + h5;
+            sum = h1 + h2 - h3 - h4 + h5;
             return sum;
 
             //int score;

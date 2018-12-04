@@ -14,7 +14,7 @@ namespace Mankalah
         private static int timeLimit = 1000;						                // turn time in msec
 
         private static Player pTop = new BonzoPlayer(Position.Top, timeLimit);	// TOP player (MAX)
-        private static Player pBot = new skeletronPrime(Position.Bottom, timeLimit);	// BOTTOM player	
+        private static Player pBot = new neg6Player(Position.Bottom, timeLimit);	// BOTTOM player	
         private static Board b;			                                // playing surface
         private static int move;
  

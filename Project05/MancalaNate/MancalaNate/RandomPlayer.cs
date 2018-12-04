@@ -9,7 +9,7 @@ namespace Mankalah
         private Position us;
         private int timeLimit;
 
-        public RandomPlayer(Position pos, int timeLimit) : base(pos, "RandomPlayer", timeLimit)
+        public RandomPlayer(Position pos, int timeLimit) : base (pos, "RandomPlayer", timeLimit)
         {
             this.timeLimit = timeLimit;
             us = pos;
