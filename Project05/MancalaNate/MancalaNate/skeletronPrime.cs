@@ -67,7 +67,7 @@ namespace Mankalah
                     {
                         if (sw.ElapsedMilliseconds >= timeLimit - 100)
                             //return new int[] { 0, int.MinValue };
-                            return new int[] { 0, evaluate(b) };
+                            return new int[] { i, evaluate(b) };
                         Board modified = SimulateBoard(b, i);
 
                         int[] newMove = minmaxVal(modified, depth - 1, alpha, beta, ref sw);
@@ -76,6 +76,7 @@ namespace Mankalah
                         {
                             bestMove[0] = i;
                             bestMove[1] = newMove[1];
+                            //Console.WriteLine($"Changed bestMove in max to move {i} with value {bestMove[1]}");
                         }
 
                         alpha = Math.Max(alpha, bestMove[1]);
@@ -94,16 +95,17 @@ namespace Mankalah
                     {
                         if (sw.ElapsedMilliseconds >= timeLimit - 100)
                             //return new int[] { 0, int.MaxValue };
-                            return new int[] { 0, evaluate(b) };
+                            return new int[] { i, evaluate(b) };
 
                         Board modified = SimulateBoard(b, i);
 
                         int[] newMove = minmaxVal(modified, depth - 1, alpha, beta, ref sw);
 
-                        if (newMove[1] > bestMove[1])
+                        if (newMove[1] < bestMove[1])
                         {
                             bestMove[0] = i;
                             bestMove[1] = newMove[1];
+                            //Console.WriteLine($"Changed bestMove in min to move {i} with value {bestMove[1]}");
                         }
 
                         beta = Math.Min(beta, bestMove[1]);
