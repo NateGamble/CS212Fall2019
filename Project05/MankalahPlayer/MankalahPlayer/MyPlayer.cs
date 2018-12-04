@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace Mankalah
 {
 
-    public class ck45Player : Player
+    public class neg6WeightedPlayer : Player
     {
         private Position us;
         private int timeLimit;
         int maxDepth;
 
-        public ck45Player(Position pos, int timeLimit) : base(pos, "ChanKim", timeLimit)
+        public neg6WeightedPlayer(Position pos, int timeLimit) : base(pos, "NateGambleWeighted", timeLimit)
         {
             this.timeLimit = timeLimit;
             us = pos;
@@ -22,7 +22,7 @@ namespace Mankalah
 
         public override string gloat()
         {
-            return "ChanKim wins!";
+            return "Weighted Nate wins!";
         }
 
         public override int chooseMove(Board b)
@@ -132,86 +132,35 @@ namespace Mankalah
         }
 
         /*Evaluate function used when the end game is not clear
-         * Uses heuristic found on github by previous student
-         * Code belongs to Chan Kim (ck45@students.calvin.edu)
+         * Uses 5 heuristics found by researchers at the University of Kansas to be the best
+         * Heuristic research found at https://fiasco.ittc.ku.edu/publications/documents/Gifford_ITTC-FY2009-TR-03050-03.pdf
+         * h1 is my score - opponent's score
+         * h2 is how close I am to winning
+         * h3 is how close the opponent is to winning
+         * h4 is the number of stones close to my home
+         * h5 is the number of stones far from my home (on my side of the board)
          */
         public override int evaluate(Board b)
         {
-            int score = b.stonesAt(13) - b.stonesAt(6);
-            int stonesTotal = 0;
-            int goAgainsTotal = 0;
-            int capturesTotal = 0;
-
-            for (int i = 7; i <= 12; i++)
+            int h1, h2, h3, h4, h5, sum;
+            if (us == Position.Top)
             {
-                int priority = 0;
-                int target = b.stonesAt(i) % (13 - i);
-                int targetStonesAt = b.stonesAt(target + 7);
-                if (b.whoseMove() == Position.Bottom)
-                {
-                    stonesTotal -= b.stonesAt(i);
-
-                    if ((b.stonesAt(i) - (13 - i) == 0) || (b.stonesAt(i) - (13 - i)) == 13)
-                    {
-                        goAgainsTotal -= (1 + priority);
-                    }
-                    if (targetStonesAt == 0 && b.stonesAt(i) == (13 - i + target + 7))
-                    {
-                        capturesTotal += (b.stonesAt(i) + b.stonesAt(12 - target));
-                    }
-                }
-                else
-                {
-                    stonesTotal += b.stonesAt(i);
-
-                    if ((b.stonesAt(i) - (13 - i) == 0) || (b.stonesAt(i) - (13 - i)) == 13)
-                    {
-                        goAgainsTotal += (1 + priority);
-                    }
-                    if (targetStonesAt == 0 && b.stonesAt(i) == (13 - i + target + 7))
-                    {
-                        capturesTotal -= (b.stonesAt(i) + b.stonesAt(12 - target));
-                    }
-                }
-                priority++;
+                h2 = b.scoreTop();
+                h3 = b.scoreBot();
+                h1 = h2 - b.scoreBot();
+                h4 = b.stonesAt(11) + b.stonesAt(12);
+                h5 = b.stonesAt(7) + b.stonesAt(8);
             }
-
-            for (int i = 0; i <= 5; i++)
+            else
             {
-                int priority = 0;
-                int target = b.stonesAt(i) % (13 - i);
-                int targetStonesAt = b.stonesAt(target);
-                if (b.whoseMove() == Position.Bottom)
-                {
-                    stonesTotal += b.stonesAt(i);
-
-                    if ((b.stonesAt(i) - (6 - i) == 0) || (b.stonesAt(i) - (6 - i)) == 13)
-                    {
-                        goAgainsTotal -= (1 + priority);
-                    }
-                    if (targetStonesAt == 0 && b.stonesAt(i) == (13 - i + target))
-                    {
-                        capturesTotal -= (b.stonesAt(i) + b.stonesAt(12 - target));
-                    }
-                }
-                else
-                {
-                    stonesTotal -= b.stonesAt(i);
-
-                    if ((b.stonesAt(i) - (6 - i) == 0) || (b.stonesAt(i) - (6 - i)) == 13)
-                    {
-                        goAgainsTotal += (1 + priority);
-                    }
-                    if (targetStonesAt == 0 && b.stonesAt(i) == (13 - i + target))
-                    {
-                        capturesTotal += (b.stonesAt(i) + b.stonesAt(12 - target));
-                    }
-                }
-                priority++;
+                h2 = b.scoreBot();
+                h3 = b.scoreTop();
+                h1 = h2 - b.scoreTop();
+                h4 = b.stonesAt(4) + b.stonesAt(5);
+                h5 = b.stonesAt(0) + b.stonesAt(1);
             }
-
-            score += stonesTotal + capturesTotal + goAgainsTotal;
-            return score;
+            sum = (h1 * 4) + (h2 * 2) - (h3 * 2) - (int)(h4 * 1.5) + (int)(h5 * 1.5);
+            return sum;
 
             //int score;
             //if (us == Position.Top)

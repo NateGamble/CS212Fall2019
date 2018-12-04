@@ -159,7 +159,7 @@ namespace Mankalah
                 h4 = b.stonesAt(4) + b.stonesAt(5);
                 h5 = b.stonesAt(0) + b.stonesAt(1);
             }
-            sum = h1 + h2 - h3 - h4 + h5;
+            sum = (h1 * 4) + (h2 * 2) - (h3 * 2) - (int) (h4 * 1.5) + (int) (h5 * 1.5);
             return sum;
 
             //int score;
