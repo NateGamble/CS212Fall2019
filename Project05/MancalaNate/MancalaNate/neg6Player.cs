@@ -11,13 +11,11 @@ namespace Mankalah
     {
         private Position us;
         private int timeLimit;
-        int maxDepth;
 
         public neg6Player(Position pos, int timeLimit) : base(pos, "NateGamble", timeLimit)
         {
             this.timeLimit = timeLimit;
             us = pos;
-            maxDepth = 50;
         }
 
         public override string gloat()
@@ -30,10 +28,9 @@ namespace Mankalah
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            int depth = 1;
+            int depth = 5;
             int[] moveToTake = { 0, int.MinValue };
 
-            maxDepth = 50;
 
             do
             {
@@ -42,7 +39,7 @@ namespace Mankalah
                     moveToTake = result;
                 Console.WriteLine($"Depth{depth}: best move is {moveToTake[0]} with score {moveToTake[1]}");
                 depth++;
-            } while (sw.ElapsedMilliseconds < (timeLimit - 100) && depth <= maxDepth);
+            } while (sw.ElapsedMilliseconds < (timeLimit) && depth <= 50);
 
             Console.WriteLine($"Elapsed Time: {sw.ElapsedMilliseconds}, time allowed: {timeLimit}");
 
@@ -57,10 +54,7 @@ namespace Mankalah
             if (depth == 0)
                 return new int[] { 0, evaluate(b) };
             if (b.gameOver())
-            {
-                maxDepth = depth;
                 return new int[] { 0, endGameEval(b) };
-            }
             int[] bestMove = { 0, int.MinValue };
 
             //our turn -> maximize
@@ -71,7 +65,7 @@ namespace Mankalah
                 {
                     if (b.legalMove(i))
                     {
-                        if (sw.ElapsedMilliseconds >= timeLimit - 100)
+                        if (sw.ElapsedMilliseconds >= timeLimit - 20)
                             //return new int[] { 0, int.MinValue };
                             return new int[] { i, evaluate(b) };
                         Board modified = SimulateBoard(b, i);
@@ -99,7 +93,7 @@ namespace Mankalah
                 {
                     if (b.legalMove(i))
                     {
-                        if (sw.ElapsedMilliseconds >= timeLimit - 100)
+                        if (sw.ElapsedMilliseconds >= timeLimit - 20)
                             //return new int[] { 0, int.MaxValue };
                             return new int[] { i, evaluate(b) };
 
@@ -120,8 +114,6 @@ namespace Mankalah
                 }
             }
 
-            if (maxDepth != 50)
-                maxDepth = depth;
             return bestMove;
         }
         private Board SimulateBoard(Board original, int move)
@@ -145,21 +137,25 @@ namespace Mankalah
             int h1, h2, h3, h4, h5, sum;
             if (us == Position.Top)
             {
-                h2 = b.scoreTop();
-                h3 = b.scoreBot();
+                h2 = b.stonesAt(13);
+                h3 = b.stonesAt(6);
                 h1 = h2 - b.scoreBot();
                 h4 = b.stonesAt(11) + b.stonesAt(12);
                 h5 = b.stonesAt(7) + b.stonesAt(8);
             }
             else
             {
-                h2 = b.scoreBot();
-                h3 = b.scoreTop();
+                h2 = b.stonesAt(6);
+                h3 = b.stonesAt(13);
                 h1 = h2 - b.scoreTop();
                 h4 = b.stonesAt(4) + b.stonesAt(5);
                 h5 = b.stonesAt(0) + b.stonesAt(1);
             }
-            sum = (h1 * 4) + (h2 * 2) - (h3 * 2) - (int) (h4 * 1.5) + (int) (h5 * 1.5);
+            sum = (h1 + 10) + (h2 + 8) - (h3 + 8) - (h4 + 4) + (h5 + 4);
+            if (h2 > 24)    //If we have at least half of the stones
+                sum += 500;
+            else if (h3 > 24)   //If opponent has at least half of the stones
+                sum -= 500;
             return sum;
 
             //int score;
