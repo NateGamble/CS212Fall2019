@@ -42,7 +42,7 @@ namespace Mankalah
             //{
             //    move[0] = 7;
             //}
-            int[] result = minmaxVal(b, depth, ref timer);
+            int[] result = minmaxVal(b, depth, float.MinValue, float.MaxValue, ref timer);
             // int[] result1 = result;
 
             //while (timer.ElapsedMilliseconds < (max_time - 200))
@@ -77,7 +77,7 @@ namespace Mankalah
         }
 
 
-        private int[] minmaxVal(Board b, int d, ref Stopwatch timer)
+        private int[] minmaxVal(Board b, int d, float alpha, float beta, ref Stopwatch timer)
         {
             if (d == 0 || b.gameOver())
             {
@@ -93,13 +93,16 @@ namespace Mankalah
                     {
                         Board b1 = new Board(b);
                         b1.makeMove(move, false);
-                        int[] val = minmaxVal(b1, d - 1, ref timer);
+                        int[] val = minmaxVal(b1, d - 1, alpha, beta, ref timer);
                         if (val[1] > bestVal)
                         {
                             bestVal = val[1];
                             bestMove[0] = move;
                             bestMove[1] = bestVal;
                         }
+
+                        alpha = Math.Max(alpha, bestMove[1]);
+                        if (beta <= alpha) { break; }
                     }
                 }
             }
@@ -114,13 +117,16 @@ namespace Mankalah
                     {
                         Board b1 = new Board(b);
                         b1.makeMove(move, false);
-                        int[] val = minmaxVal(b1, d - 1, ref timer);
+                        int[] val = minmaxVal(b1, d - 1, alpha, beta, ref timer);
                         if (val[1] < bestVal)
                         {
                             bestVal = val[1];
                             bestMove[0] = move;
                             bestMove[1] = bestVal;
                         }
+
+                        beta = Math.Min(beta, bestMove[1]);
+                        if (beta <= alpha) { break; }
                     }
                 }
             }

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace Mankalah
 {
 
-    public class neg6Player : Player
+    public class buffyPlayer : Player
     {
         private Position us;
         private int timeLimit;
 
-        public neg6Player(Position pos, int timeLimit) : base(pos, "NateGamble", timeLimit)
+        public buffyPlayer(Position pos, int timeLimit) : base(pos, "Buffy the Vampire Slayer", timeLimit)
         {
             this.timeLimit = timeLimit;
             us = pos;
@@ -20,7 +20,7 @@ namespace Mankalah
 
         public override string gloat()
         {
-            return "Nate the Great won!";
+            return "Buffy wins again!";
         }
 
         public override int chooseMove(Board b)
@@ -134,7 +134,8 @@ namespace Mankalah
          */
         public override int evaluate(Board b)
         {
-            int h1, h2, h3, h4, h5, sum;
+            int h1, h2, h3, h4, h5, h6, target, sum;
+            h6 = 0;
             if (us == Position.Top)
             {
                 h2 = b.stonesAt(13);
@@ -142,6 +143,16 @@ namespace Mankalah
                 h1 = h2 - b.scoreBot();
                 h4 = b.stonesAt(11) + b.stonesAt(12);
                 h5 = b.stonesAt(7) + b.stonesAt(8);
+                for (int i = 7; i < 13; i++)
+                {
+                    target = i + b.stonesAt(i);
+                    if (target == 13)    //calculating go-agains
+                    {
+                        //if (b.stonesAt(target) == 0 && b.stonesAt(12 - target) != 0)
+                        //    h6 += b.stonesAt(12 - target);
+                        h6 = 100;
+                    }
+                }
             }
             else
             {
@@ -150,8 +161,18 @@ namespace Mankalah
                 h1 = h2 - b.scoreTop();
                 h4 = b.stonesAt(4) + b.stonesAt(5);
                 h5 = b.stonesAt(0) + b.stonesAt(1);
+                for (int i = 0; i < 6; i++)
+                {
+                    target = i + b.stonesAt(i);
+                    if (target == 6)    //calculating go-agains
+                    {
+                        //if (b.stonesAt(target) == 0 && b.stonesAt(12 - target) != 0)
+                        //    h6 += b.stonesAt(12 - target);
+                        h6 = 100;
+                    }
+                }
             }
-            sum = (h1 + 10) + (h2 + 8) - (h3 + 8) - (h4 + 4) + (h5 + 4);
+            sum = (h1 + 10) + (h2 + 8) - (h3 + 8) - (h4 + 4) + (h5 + 4) + (h6 + 0);
             sum = (us == Position.Top) ? sum : -1 * sum;
             if (h2 > 24)    //If we have at least half of the stones
                 sum += 500;
